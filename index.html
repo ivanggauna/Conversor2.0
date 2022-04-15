@@ -1,57 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e3b9616a51.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Conversor</title>
 </head>
+
 <body>
     <div class="contenedor">
         <header>Conversor de monedas</header>
-    
-    <form action="#">
-        <div class="monto">
-            <p>Ingresar monto</p>
-            <input type="text" value="1">
-        </div>
-        <div class="listaDesplegable">
-            <div class="primerValor">
-                <p>De</p>
-                <div class="seleccion">
-                    <img class="bandera" src="https://countryflagsapi.com/png/ar" alt="flag">
-                    <select name="" id="">
-                        <option value="ARS">ARS</option>
-                        <option value="EUR">EUR</option>
-                        <option value="YEN">YEN</option>
-                        <option value="USD">USD</option>
-                    </select>
+        <form action="#">
+            <div class="monto">
+                <p>Ingresar monto</p>
+                <input type="text" value="1">
+            </div>
+            <div class="listaDesplegable">
+                <div class="primerValor">
+                    <p>De</p>
+                    <div class="seleccion">
+                        <img  src="https://countryflagsapi.com/png/ar" alt="flag">
+                        <select name="" id="">
+                        </select>
+                    </div>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="segundoValor">
+                    <p>A</p>
+                    <div class="seleccion">
+                        <img  src="https://countryflagsapi.com/png/us" alt="flag">
+                        <select name="" id="">
+                        </select>
+                    </div>
                 </div>
             </div>
-        
-        <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-        <div class="segundoValor">
-            <p>A</p>
-            <div class="seleccion">
-                <img class="bandera" src="https://countryflagsapi.com/png/us" alt="flag">
-                <select name="" id="">
-                    <option value="ARS">ARS</option>
-                    <option value="EUR">EUR</option>
-                    <option value="YEN">YEN</option>
-                    <option value="USD">USD</option>
-                </select>
-            </div>
-        </div>
+            <div class="tasaDeConversion">Obteniendo valores para el cambio..</div>
+            <button>Convertir</button>
+        </form>
     </div>
-        <div class="tasaDeConversion">1 ARS = 0,0089 USD</div>
-        <button>Convertir</button>
-    </form>
-</div>
 
-<script src="js/lista-paises.js"></script>
-<script src="js/codigo.js"></script>
 
+    <script src="js/lista-paises.js"></script>
+    <script src="js/codigo.js"></script>
 </body>
+
 </html>
