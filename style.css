@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Signika&display=swap");
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +9,7 @@
 
 
 
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +17,7 @@ body{
     background-color: rgb(7, 179, 121);
 }
 
-.contenedor{
+.contenedor {
     width: 400px;
     padding: 30px;
     border-radius: 10px;
@@ -33,16 +34,18 @@ body{
     margin: 40px 0 20px 0;
 }
 
-form :where(input, select, button){
+form :where(input, select, button) {
     width: 100%;
     outline: none;
     border: none;
     border-radius: 5px;
 }
-form p{
+
+form p {
     font-size: 21px;
     margin-bottom: 5px;
 }
+
 form input {
     height: 50px;
     font-size: 20px;
@@ -50,12 +53,12 @@ form input {
     border: 1px solid grey;
 }
 
-form input:focus{
+form input:focus {
     padding: 0 15px;
     border: 2px solid rgb(8, 133, 133)
 }
 
-form .listaDesplegable{
+form .listaDesplegable {
     display: flex;
     margin-top: 20px;
     align-items: center;
@@ -65,26 +68,28 @@ form .listaDesplegable{
 .listaDesplegable .seleccion {
     display: flex;
     height: 45px;
-    width: 115px;   
+    width: 115px;
     justify-content: center;
     align-items: center;
     border: 1px solid grey;
     border-radius: 5px;
 }
 
-.seleccion select{
+.seleccion select {
     width: auto;
     font-size: 16px;
     margin: 0 5px;
 }
 
-.seleccion select::-webkit-scrollbar{
+.seleccion select::-webkit-scrollbar {
     width: 8px;
 }
-.seleccion select::-webkit-scrollbar-track{
+
+.seleccion select::-webkit-scrollbar-track {
     background-color: white;
 }
-.seleccion select::-webkit-scrollbar-thumb{
+
+.seleccion select::-webkit-scrollbar-thumb {
     background-color: rgb(163, 160, 160);
     border-radius: 8px;
     border-right: 2px solid white;
@@ -94,13 +99,13 @@ form .listaDesplegable{
     max-width: 35px;
 }
 
-.listaDesplegable .icon{
+.listaDesplegable .icon {
     cursor: pointer;
     font-size: 22px;
     margin-top: 35px;
 }
 
-form .tasaDeConversion{
+form .tasaDeConversion {
     font-size: 20px;
     margin: 20px 0 30px;
 }

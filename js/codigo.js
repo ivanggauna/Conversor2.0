@@ -27,9 +27,9 @@ for (let i = 0; i < listaDesplegable.length; i++) {
 
 }
 
-function banderas(element){
-    for (id in paises_id){
-        if (id == element.value){
+function banderas(element) {
+    for (id in paises_id) {
+        if (id == element.value) {
             let imgBandera = element.parentElement.querySelector("img")
             imgBandera.src = `https://countryflagsapi.com/png/${paises_id[id]}`
         }
@@ -42,7 +42,8 @@ function banderas(element){
 
 
 
-window.addEventListener("load", () => {  
+window.addEventListener("load", () => {
+    calcularClick();
     tasaDeConversion();
 })
 
@@ -56,14 +57,37 @@ button.addEventListener("click", e => {
 
 
 const iconoDeCambio = document.querySelector(".listaDesplegable .icon")
-iconoDeCambio.addEventListener("click", ()=>{
+iconoDeCambio.addEventListener("click", () => {
     let temporal = primerValor.value
     primerValor.value = segundoValor.value
-    segundoValor.value= temporal
+    segundoValor.value = temporal
     banderas(primerValor);
     banderas(segundoValor);
     tasaDeConversion()
 })
+
+
+function calcularClick() {
+    let btnConvertir = document.querySelector(".convertirBtn")
+    btnConvertir.addEventListener('click', () => {
+        Toastify({
+            text: "Conversion exitosa",
+            duration: 3000,            
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #bd9339, #e9a015)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+       tasaDeConversion()
+
+    })
+
+}
 
 
 
@@ -82,10 +106,11 @@ function tasaDeConversion() {
     /* Fetch de la api */
     fetch(url).then(response => response.json()).then(result => {
         let tasaDeCambio = result.conversion_rates[segundoValor.value]
-        let tasaDeCambioTotal = (valorMonto * tasaDeCambio).toFixed(2)        
+        let tasaDeCambioTotal = (valorMonto * tasaDeCambio).toFixed(2)
         textoTasaDeCambio.innerText = `${valorMonto} ${primerValor.value} = ${tasaDeCambioTotal} ${segundoValor.value}`
-    }) .catch (() =>{
-        textoTasaDeCambio.innerText = "Un simple error."
+    }).catch(() => {
+        textoTasaDeCambio.innerText = "Un simple error. Intente otra moneda"
     })
 
 }
+
